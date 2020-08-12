@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<head>
+    <title> rock-paper </title>
+<script>
+    
+let computerSelection1 = Math. random();
+
+
+function computerPlay(){
+   if (computerSelection1 < 0.3) {
+       computerSelection1 = "rock";
+   }else if(computerSelection1 > 0.3 && computerSelection1 < 0.6){
+       computerSelection1 = "paper"
+   }else{
+       computerSelection1 = "scissors"
+   }
+   return computerSelection1
+
+}
+
+
+function playRound (playerSelection, computerSelection) {
+
+     if (playerSelection == computerSelection) {
+            console.log("Tie!")
+}else if(playerSelection == "paper" && computerSelection == "rock" ){
+    console.log("You win");
+}else if (playerSelection == 'rock' && computerSelection == 'scissors'){
+console.log("You win!");
+}else if (playerSelection == 'scissors' && computerSelection == 'rock'){
+console.log("You lose!");
+}else if (playerSelection == 'rock' && computerSelection == 'paper'){
+console.log("You lose!");
+}else if ( playerSelection == 'paper' && computerSelection == 'scissors'){
+console.log("You lose!");
+}else if (playerSelection == 'scissors' && computerSelection == 'paper'){
+console.log("You win!");
+}else{
+    console.log("Wrong Choice!")
+}
+
+}
+ 
+function game() {
+        let i = 0;
+        do {
+            let computerSelection = computerPlay();
+            let playerSelection = prompt("Choose Rock, Paper, Scissors");
+
+             playerSelection = playerSelection.toLowerCase();
+             computerSelection = computerSelection.toLowerCase();
+
+             console.log("User: "  + playerSelection);
+             console.log("computer: " + computerSelection);
+             console.log(playRound(playerSelection, computerSelection));
+            i++;
+        } while (i < 5);
+    }
+    game();
+</script>
+</head>
+<body></body>
